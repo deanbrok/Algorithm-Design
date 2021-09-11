@@ -11,6 +11,7 @@ public class PackingTruck {
         if (n == 0) return 0;
         int truckN = 1;
         int currentWeight = 0;
+
         for(int i = 1; i <= n; i++) {
             if (currentWeight + weights[i] <= maxWeight) {
                 currentWeight += weights[i];
@@ -20,7 +21,6 @@ public class PackingTruck {
                 currentWeight = 0;
                 currentWeight += weights[i];
             }
-
         }
 
         return truckN;
