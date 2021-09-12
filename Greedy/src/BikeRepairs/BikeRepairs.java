@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class BikeRepairs {
 
     private int noRepairs;
-    private Repair[] repairs;
     private ArrayList<Repair> labels;
+    private PriorityQueue<Repair> pq;
 
     private class Repair implements Comparable<Repair>{
         int start;
@@ -43,9 +43,6 @@ public class BikeRepairs {
     public String solve(InputStream in) {
         parseInput(in);
 
-        PriorityQueue<Repair> pq = new PriorityQueue<>();
-        for (Repair r: repairs) pq.add(r);
-
         while (!pq.isEmpty()) {
             Repair r = pq.poll();
             boolean labelled = false;
@@ -68,16 +65,13 @@ public class BikeRepairs {
         Scanner sc = new Scanner(in);
 
         noRepairs = sc.nextInt();
-        repairs = new Repair[noRepairs];
+        pq = new PriorityQueue<>();
         labels = new ArrayList<>();
-
-        int i = 0;
 
         while (sc.hasNext()) {
             int start = sc.nextInt();
             int time = sc.nextInt();
-            repairs[i] = new Repair(start, start + time);
-            i++;
+            pq.add(new Repair(start, start + time));
         }
         sc.close();
     }
