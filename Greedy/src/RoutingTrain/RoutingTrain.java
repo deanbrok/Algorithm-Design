@@ -19,6 +19,8 @@ public class RoutingTrain {
     private Node[] nodes;
     private boolean[] onStack;
 
+    private boolean result;
+
     private class Node {
 
         List<Node> outgoingEdges;
@@ -53,21 +55,23 @@ public class RoutingTrain {
         parseInput(in);
         dfsCycle(nodes[s]);
 
-        if (nodes[t].marked) return "yes";
-        else                 return "no";
+        if (result) return "yes";
+        else        return "no";
     }
 
-    private boolean dfsCycle(Node node) {
+    private void dfsCycle(Node node) {
         node.marked = true;
         onStack[node.id] = true;
 
         for (Node n: node.outgoingEdges) {
-            if (onStack[n.id])          return true;
-            else if (!n.marked)         return dfsCycle(n);
+            if (onStack[n.id]) {
+                result = true;
+                return;
+            }
+            else if (!n.marked) dfsCycle(n);
         }
         onStack[node.id] = false;
 
-        return false;
     }
 
     private void parseInput(InputStream in) {
