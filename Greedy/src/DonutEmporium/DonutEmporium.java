@@ -66,7 +66,6 @@ public class DonutEmporium {
         result.delete(result.lastIndexOf("\n"), result.lastIndexOf("\n") + 1);
 
         return result.toString();
-
     }
 
     private class distanceComparator implements Comparator<Distance> {
