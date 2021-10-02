@@ -1,7 +1,5 @@
 package SortCount;
 
-import Mergesort.Mergesort;
-
 public class SortCount {
     static int countInversions(int[] array) {
         // TODO
