@@ -14,6 +14,14 @@ public class Point {
         this.x = x;
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
 
 /**
