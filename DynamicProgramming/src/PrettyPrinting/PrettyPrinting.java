@@ -85,7 +85,7 @@ public class PrettyPrinting {
         return result;
 
     }
-    
+
     private static int calculateSlack(int i, int j, String[] words, int maxLength) {
         int totalLength = 0;
 
