@@ -51,8 +51,6 @@ public class FordFulkerson {
         seenNodes.add(g.getSource());
 
         while (!queue.isEmpty()) {
-//            System.out.println(seenNodes);
-//            System.out.println(queue);
             Node currentNode = queue.poll();
 
             for (Edge e: currentNode.getEdges()) {
@@ -62,10 +60,6 @@ public class FordFulkerson {
                     seenNodes.add(e.getTo());
                 }
             }
-//
-//            System.out.println(queue);
-//            System.out.println();
-//            System.out.println();
         }
 
         if (!fromEdge.containsKey(g.getSink())) return null;
