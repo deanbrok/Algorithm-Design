@@ -1,11 +1,10 @@
-package SnailsAndOwners;
+package BipartiteMatching;
 
 import ResidualGraph.Graph;
 import ResidualGraph.MaxFlow;
 import ResidualGraph.Node;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
