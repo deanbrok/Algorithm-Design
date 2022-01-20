@@ -1,3 +1,5 @@
+package Midterm;
+
 public class Cards {
     /**
      * You should implement this method.
